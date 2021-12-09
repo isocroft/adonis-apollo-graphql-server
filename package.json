@@ -1,0 +1,68 @@
+{
+    "name": "adonisjs-apollo-graphql-server",
+    "version": "0.0.1",
+    "description": "The Apollo v2 Server GraphQL implementation for AdonisJS 4.x web applications on steroids",
+    "main": "index.js",
+    "scripts": {
+        "lint": "standard",
+        "pretest": "npm run lint",
+        "test": "nyc node japaFile.js",
+        "test:win": "node ./node_modules/japa-cli/index.js"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "eslint --fix . --ext .js .",
+            "pre-push": "eslint --fix . --ext .js ."
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isocroft/adonis-apollo-graphql-server.git"
+    },
+    "keywords": [
+        "adonis",
+        "AdonisJS",
+        "server",
+        "graphql",
+        "apollo"
+    ],
+    "author": "<Ifeora Okechukwu> https://github.com/isocroft",
+    "license": "MIT",
+    "nyc": {
+        "exclude": [
+          "test"
+        ]
+    },
+    "standard": {
+        "globals": [
+          "use",
+          "test"
+        ]
+    },
+    "bugs": {
+        "url": "https://github.com/isocroft/adonis-apollo-graphql-server/issues"
+    },
+    "homepage": "https://github.com/isocroft/adonis-apollo-graphql-server#readme",
+    "devDependencies": {
+        "@adonisjs/fold": "^4.0.9",
+        "@adonisjs/framework": "^5.0.9",
+        "coveralls": "^3.0.2",
+        "husky": "^3.0.9",
+        "japa": "^2.0.5",
+        "japa-cli": "^1.0.1",
+        "nyc": "^13.0.1",
+        "semver": "^5.5.0",
+        "standard": "^12.0.1"
+    },
+    "peerDependencies": {
+        "@adonisjs/fold": "^4.0.9",
+        "@adonisjs/framework": "^5.0.9"
+    },
+    "dependencies": {
+        "apollo-server-core": "^2.9.12",
+        "graphql": "^14.5.8",
+        "graphql-rate-limit": "^2.0.1",
+        "graphql-playground-html": "^1.6.13",
+        "graphql-tools": "^4.0.6"
+    }
+}
