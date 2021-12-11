@@ -16,6 +16,7 @@ function isString(value) {
 class AdonisGraphQLServer {
     constructor({ Config, runHttpQuery, GraphiQL, makeExecutableSchema, print, GraphQLUpload, gql, processRequest }) {
         this.Config = Config;
+        this.appHttpCompressionOptions = this.Config.get('')
         this.options = this.Config.get('graphql');
         this.runHttpQuery = runHttpQuery;
         this.GraphiQL = GraphiQL;
@@ -66,10 +67,13 @@ class AdonisGraphQLServer {
     }
 
     _getQueryObject(body) {
-        const { query, variables, operationName } = body;
+        const { query, variables, operationName, extensions } = body;
         if (variables) {
             if (isString(query)) {
                 if (isString(operationName)) {
+                    if (isString(extensions)) {
+                        return { extensions, operationName, query, variables }
+                    }
                     return { operationName, query, variables }
                 }
                 return { query, variables };
@@ -170,7 +174,7 @@ class AdonisGraphQLServer {
                 query: this._getQueryObject({ query, variables: transformedVariables, operatioName, extensions }),
             });
             response.safeHeader('Content-type', 'application/json');
-            return response.json(graphqlResponse);
+            return response.sendToStream(graphqlResponse);
         } catch (error) {
             if (error.name !== 'HttpQueryError') {
                 throw error;
