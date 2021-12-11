@@ -16,7 +16,7 @@ function isString(value) {
 class AdonisGraphQLServer {
     constructor({ Config, runHttpQuery, GraphiQL, makeExecutableSchema, print, GraphQLUpload, gql, processRequest }) {
         this.Config = Config;
-        this.appHttpCompressionOptions = this.Config.get('')
+        // this.appHttpCompressionOptions = this.Config.get('app.http.compression')
         this.options = this.Config.get('graphql');
         this.runHttpQuery = runHttpQuery;
         this.GraphiQL = GraphiQL;
