@@ -13,7 +13,7 @@ module.exports = {
 
   /*
    |--------------------------------------------------------------------------
-   | GraphQL Enable Http Compression (GZIP)
+   | GraphQL No Auth Resolver Names
    |--------------------------------------------------------------------------
    |
    |
@@ -21,7 +21,9 @@ module.exports = {
    |
    */
 
-  // ensureHttpCompression: Env.get('ENABLE_HTTP_COMPRESSION_ON_RESPONSE', false),
+  noAuthResolverNames: [
+    'login'
+  ],
 
   /*
    |--------------------------------------------------------------------------
