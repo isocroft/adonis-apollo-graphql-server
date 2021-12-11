@@ -56,7 +56,8 @@
     },
     "peerDependencies": {
         "@adonisjs/fold": "^4.0.9",
-        "@adonisjs/framework": "^5.0.9"
+        "@adonisjs/framework": "^5.0.9",
+        "adonisjs-extensions": "^0.0.11"
     },
     "dependencies": {
         "apollo-server-core": "^2.9.12",
