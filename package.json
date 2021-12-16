@@ -44,6 +44,7 @@
     },
     "homepage": "https://github.com/isocroft/adonis-apollo-graphql-server#readme",
     "devDependencies": {
+        "@adonisjs/auth": "^3.0.7",
         "@adonisjs/fold": "^4.0.9",
         "@adonisjs/framework": "^5.0.9",
         "coveralls": "^3.0.2",
@@ -55,6 +56,7 @@
         "standard": "^12.0.1"
     },
     "peerDependencies": {
+        "@adonisjs/auth": "^3.0.7",
         "@adonisjs/fold": "^4.0.9",
         "@adonisjs/framework": "^5.0.9",
         "adonisjs-extensions": "^0.0.11"
